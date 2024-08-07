@@ -1,13 +1,13 @@
 {
-    "name": "@illinois-toolkit/<%= name %>",
+    "name": "@illinois-toolkit/ilw-accordion",
     "description": "One paragraph description of the component.",
-    "repository": "github:<%= repository %>",
+    "repository": "github:web-illinois/ilw-accordion",
     "private": false,
     "version": "0.0.1",
     "type": "module",
     "exports": {
         ".": {
-            "import": "./src/<%= name %>.js"
+            "import": "./src/ilw-accordion.js"
         }
     },
     "scripts": {
