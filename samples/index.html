@@ -1,17 +1,55 @@
 <!doctype html>
 <html lang="en">
 
-<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordion Component</title>
     <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
     <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/3.0.0-alpha/ilw-global.css">
     <script type="module" src="/src/ilw-accordion.js"></script>
-</head>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+          const params = new URLSearchParams(window.location.search);
+          document.querySelectorAll("ilw-accordion").forEach(component => {
+            if (params.has('theme')) {
+              component.setAttribute('theme', params.get('theme'));
+            }
+            if (params.has('width')) {
+              component.setAttribute('width', params.get('width'));
+            }
+            if (params.has('limit')) {
+              component.setAttribute('limit', params.get('limit'));
+            }
+          });
+        });
+    </script>
+    
 <body style="margin: 0; padding: 0;">
-<ilw-accordion></ilw-accordion>
+    <div style="margin: 0 auto; max-width: 1200px;">
+    <h2 id="accordion-header">Enrollment FAQ</h2>
+    <ilw-accordion aria-labelledby="accordion-header">
+      <ilw-accordion-panel>
+        <h3 slot="summary">What are the admission requirements for enrolling in a degree program?</h3>
+        <p>To enroll in a degree program, you typically need to meet certain admission requirements, which may include:</p>
+        <ul>
+           <li>A high school diploma or equivalent (e.g., GED)</li>
+           <li>Satisfactory SAT, ACT, or other standardized test scores (if required)
+           <li>Completion of prerequisite courses, particularly for specialized programs (e.g., math and science courses for engineering)
+           <li>Letters of recommendation, a personal statement, or an admissions essay
+           <li>A minimum GPA requirement, which varies by program and institution
+         </ul>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">How do I submit my application?</h3>
+        <p>Applications are usually submitted online through the university's admissions portal.</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">When is the application deadline?</h3>
+        <p>Application deadlines vary by program, so check the specific dates on the university’s website.</p>
+      </ilw-accordion-panel>
+    </ilw-accordion>
+</div>
 </body>
 
 </html>

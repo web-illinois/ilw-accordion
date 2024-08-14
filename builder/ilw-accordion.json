@@ -4,7 +4,7 @@
     "github": "https://github.com/web-illinois/ilw-accordion/",
     "type": "web component",
     "element-name": "ilw-accordion",
-    "description": "Description for builder.",
+    "description": "This is an accordion where you have headers and each header can be opened to display more information. ",
     "toolkit-version": "",
     "production-version": "",
     "development-version": "1.0.0-alpha"
