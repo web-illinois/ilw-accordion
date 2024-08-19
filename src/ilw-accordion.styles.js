@@ -28,7 +28,7 @@ export default css`
     }
 
     .white {
-      --ilw-accordion--color: var(--il-blue );
+      --ilw-accordion--color: var(--il-blue);
       --ilw-accordion--background: white;
       --ilw-accordion--color-hover: var(--il-storm-lighter-4);
       --ilw-accordion--background-hover: var(--il-blue);
