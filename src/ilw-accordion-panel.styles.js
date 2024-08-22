@@ -51,11 +51,14 @@ export default css`
 
 #icon {
   display: flex;
-  width: 20px;
   padding: 0;
   margin: 0;
   transform: var(--ilw-accordion--image-transform);
   color: var(--ilw-accordion--color);
+}
+
+#icon svg {
+  width: 20px;
 }
 
 #header-parent.highlight #icon {
