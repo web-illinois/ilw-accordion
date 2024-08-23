@@ -1,19 +1,27 @@
 {
     "name": "@illinois-toolkit/ilw-accordion",
-    "description": "One paragraph description of the component.",
+    "description": "Illinois Toolkit: a bunch of headers and each header can be "opened" to display more information.",
     "repository": "github:web-illinois/ilw-accordion",
     "private": false,
-    "version": "0.0.1",
+    "version": "1.0.0-alpha",
     "type": "module",
+    "files": [
+      "src/**",
+      "dist/**",
+      "builder/**"
+    ],
     "exports": {
         ".": {
-            "import": "./src/ilw-accordion.js"
+            "import": "./src/ilw-accordion.js",
+            "require": "./src/ilw-accordion.cjs",
+            "default": "./src/ilw-accordion.js"
         }
     },
     "scripts": {
         "dev": "vite",
         "build": "vite build --config vite.build.config.js --emptyOutDir",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "prepack": "npm run build"
     },
     "dependencies": {
         "lit": "3.1.3"
