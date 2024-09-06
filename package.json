@@ -3,7 +3,7 @@
     "description": "Illinois Toolkit: a bunch of headers and each header can be opened to display more information.",
     "repository": "github:web-illinois/ilw-accordion",
     "private": false,
-    "version": "1.0.0-alpha",
+    "version": "1.0.0-alpha1",
     "type": "module",
     "files": [
       "src/**",
