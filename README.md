@@ -15,8 +15,8 @@ This should not be used to replace the HTML `details` / `summary` elements. The 
 There are two components bundled in this, the `ilw-accordion` and `ilw-accordion-panel`. The `ilw-accordion` should only contain one or more `ilw-accordion-panel` elements. The `ilw-accordion-panel` may contain headings, text, images, lists, links, and other rich-text information. 
 
 The `ilw-accordion` component has the following attributes:
-* `theme`: the theme/background of the content. Options are `blue`, `orange`, `gray`, `white`
-* `width`: whether or not this is contained in the parent (default), if it will expand to full width (`full`), or if just the background will expand and the text will be in a narrow window (`auto`). 
+* `theme`: the theme/background of the line to the left of the accordion. Options are `blue`, `orange`, `arches`, `industrial`
+* `width`: whether or not this is contained in the parent (default), if it will expand to full width (`full`), or if just the background will expand and the text will be in a narrow window (`auto`). If `auto` is used, the left border will not be used. 
 * `limit`: a boolean attribute that determines if other panels close when a panel is opened. Use this if the user will not be comparing information in different panels. 
 
 The `ilw-accordion-panel` component has the following slots:

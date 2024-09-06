@@ -5,10 +5,10 @@
     "type": "web component",
     "element-name": "ilw-accordion",
     "description": "This is an accordion where you have headers and each header can be opened to display more information. ",
-    "version": "1.0.0-alpha",
+    "version": "1.0.0-alpha1",
     "date": "08/07/2024",
-    "css": "https://dev.toolkit.illinois.edu/ilw-accordion/1.0.0-alpha/ilw-accordion.css",
-    "js": "https://dev.toolkit.illinois.edu/ilw-accordion/1.0.0-alpha/ilw-accordion.js",
+    "css": "https://dev.toolkit.illinois.edu/ilw-accordion/1.0.0-alpha1/ilw-accordion.css",
+    "js": "https://dev.toolkit.illinois.edu/ilw-accordion/1.0.0-alpha1/ilw-accordion.js",
     "production": false,
     "notes": "",
     "parent-style": "margin: 0 auto; max-width: 1200px;",
@@ -29,14 +29,14 @@
     "attributes": [
         {
             "name": "theme",
-            "description": "Color theme used, defaults to gray",
+            "description": "Color theme used, defaults to blue",
             "depreciated": false,
             "values": [
                 "",
                 "blue",
                 "orange",
-                "white",
-                "gray"
+                "industrial",
+                "arches"
             ]
         },
         {
@@ -63,32 +63,32 @@
     "classes": [],
     "css-variables": [
         {
-            "name": "--ilw-accordion--color",
+            "name": "--ilw-accordion-panel--color",
             "depreciated": false,
             "description": "Text color of the accordion"
         },
         {
-            "name": "--ilw-accordion--color-hover",
-            "depreciated": false,
-            "description": "Text color of the accordion when hovered or focused"
-        },
-        {
-            "name": "--ilw-accordion--background",
+            "name": "--ilw-accordion-panel--background",
             "depreciated": false,
             "description": "Background color of the accordion"
         },
         {
-            "name": "--ilw-accordion--background-hover",
+            "name": "--ilw-accordion-panel--hover-color",
+            "depreciated": false,
+            "description": "Text color of the accordion when hovered or focused"
+        },
+        {
+            "name": "--ilw-accordion-panel--hover-background",
             "depreciated": false,
             "description": "Background color of the accordion when hovered or focused"
         },
         {
-            "name": "--ilw-accordion--image-transform",
+            "name": "--ilw-accordion-panel--image-transform",
             "depreciated": false,
             "description": "Transform of the chevron when not expanded"
         },
         {
-            "name": "--ilw-accordion--image-transform-expand",
+            "name": "--ilw-accordion-panel--image-transform-expand",
             "depreciated": false,
             "description": "Transform of the chevron when expanded"
         },
@@ -106,6 +106,11 @@
             "name": "--ilw-accordion-panel--padding",
             "depreciated": false,
             "description": "Padding of the panel content"
+        },
+        {
+            "name": "--ilw-accordion-panel--border-left",
+            "depreciated": false,
+            "description": "Color of the left border of the panel"
         }
     ]
 }

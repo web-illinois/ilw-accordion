@@ -102,14 +102,22 @@ class AccordionPanel extends LitElement {
         this.triggerToggle();
       }
     
-      setFocus(e) {
+      setHighlight(e) {
         this.shadowRoot.querySelector('#header-parent').classList.add('highlight');
       }
     
-      leaveFocus(e) {
+      leaveHighlight(e) {
         this.shadowRoot.querySelector('#header-parent').classList.remove('highlight');
       }
+
+      setFocus(e) {
+        this.shadowRoot.querySelector('#header-parent').classList.add('focus');
+      }
     
+      leaveFocus(e) {
+        this.shadowRoot.querySelector('#header-parent').classList.remove('focus');
+      }
+
       handleWindowKeypress(evt) {
         if (evt.target == this && (evt.code == "Space" || evt.code == "Enter")) {
           this.triggerToggle();
@@ -134,7 +142,7 @@ class AccordionPanel extends LitElement {
         const classInfo = this.open ? 'expanded' : '';
         return html`
           <div id="section" class="${classInfo}">
-            <div id="header-parent" @click="${this.handleHeaderClick}" @mouseover="${this.setFocus}" @mouseout="${this.leaveFocus}">
+            <div id="header-parent" @click="${this.handleHeaderClick}" @mouseover="${this.setHighlight}" @mouseout="${this.leaveHighlight }">
               <div id="header-text-icon">
                 <span id="icon" aria-hidden="true">
                   ${this.renderChevron()}

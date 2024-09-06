@@ -1,13 +1,14 @@
 :root {
-    --ilw-accordion--color: var(--il-blue);
-    --ilw-accordion--color-hover: var(--il-storm-lighter-4);
-    --ilw-accordion--background: var(--il-storm-lighter-4);
-    --ilw-accordion--background-hover: var(--il-blue);
-    --ilw-accordion--image-transform: rotate(270deg);
-    --ilw-accordion--image-transform-expand: rotate(0);
-    --ilw-accordion--margin: 0 max(1.875rem, calc(50cqw - 37.5rem)) 0;
+    --ilw-accordion--margin: 0 var(--ilw-margin--side, max(1.875rem, calc(50cqw - 37.5rem))) 0;
+    --ilw-accordion-panel--color: var(--il-blue);
+    --ilw-accordion-panel--background: var(--il-storm-lighter-4);
+    --ilw-accordion-panel--hover-color: var(--il-blue);
+    --ilw-accordion-panel--hover-background: var(--il-storm-lighter-3);
+    --ilw-accordion-panel--image-transform: rotate(270deg);
+    --ilw-accordion-panel--image-transform-expand: rotate(0);
     --ilw-accordion-panel--margin: 0;
     --ilw-accordion-panel--padding: 5px 10px 20px 65px;
+    --ilw-accordion-panel--border-left: 6px solid var(--il-blue);
 }
 
 ilw-accordion {
