@@ -7,5 +7,5 @@
     "description": "This is an accordion where you have headers and each header can be opened to display more information. ",
     "toolkit-version": "",
     "production-version": "",
-    "development-version": "1.0.0-alpha1"
+    "development-version": "1.0-beta"
 }
