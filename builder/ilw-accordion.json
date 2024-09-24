@@ -5,6 +5,7 @@
     "type": "web component",
     "element-name": "ilw-accordion",
     "description": "This is an accordion where you have headers and each header can be opened to display more information. ",
+    "purpose": "Reduce the need for scrolling with collapsible accordions.",
     "toolkit-version": "",
     "production-version": "",
     "development-version": "1.0-beta"
