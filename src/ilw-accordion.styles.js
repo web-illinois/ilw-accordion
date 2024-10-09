@@ -1,6 +1,10 @@
 import { css } from 'lit';
 
 export default css`
+  .page {
+    margin: 0 var(--ilw-margin--side, max(1.875rem, calc(50cqw - 37.5rem))) 0;
+  }
+
   .full, .auto {
     left:50%;
     margin-left:-50vw;

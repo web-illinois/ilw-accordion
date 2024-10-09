@@ -16,7 +16,7 @@ There are two components bundled in this, the `ilw-accordion` and `ilw-accordion
 
 The `ilw-accordion` component has the following attributes:
 * `theme`: the theme/background of the line to the left of the accordion. Options are `blue`, `orange`, `arches`, `industrial`
-* `width`: whether or not this is contained in the parent (default), if it will expand to full width (`full`), or if just the background will expand and the text will be in a narrow window (`auto`). If `auto` is used, the left border will not be used. 
+* `width`: whether or not this is contained in the parent (default), if it will expand to full width (`full`), or if just the background will expand and the text will be in a narrow window (`auto`), or if it will size itself (`page`). If `auto` is used, the left border will not be used.
 * `limit`: a boolean attribute that determines if other panels close when a panel is opened. Use this if the user will not be comparing information in different panels. 
 
 The `ilw-accordion-panel` component has the following slots:
