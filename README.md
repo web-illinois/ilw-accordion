@@ -10,7 +10,7 @@ This is a accordion component, where you have a bunch of headers and each header
 
 Do not use this control when a user is going to read the entire page or you need all the information displayed (like a person completing multiple steps of a process). If you find yourself in this situation, you may want to break the page into multiple pages. 
 
-This should not be used to replace the HTML `details` / `summary` elements. The accordion is for structured information with headers, while the details / summary elements is for information that does not contain header information. 
+This should not be used to replace the HTML `details` / `summary` elements. The accordion is for structured information with headers, while the details / summary elements is for information that does not contain header information. Instead, the accordion uses [`hidden="until-found"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden#the_hidden_until_found_state). That makes it possible to search for text on the page even when the content is collapsed, and the browser opens the accordion to show matches.
 
 There are two components bundled in this, the `ilw-accordion` and `ilw-accordion-panel`. The `ilw-accordion` should only contain one or more `ilw-accordion-panel` elements. The `ilw-accordion-panel` may contain headings, text, images, lists, links, and other rich-text information. 
 
