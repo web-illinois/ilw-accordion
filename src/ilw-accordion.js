@@ -1,6 +1,6 @@
-import { LitElement, html } from 'lit';
-import styles from './ilw-accordion.styles';
-import stylesPanel from './ilw-accordion-panel.styles';
+import {LitElement, html, unsafeCSS} from 'lit';
+import styles from './ilw-accordion.styles.css?inline';
+import stylesPanel from './ilw-accordion-panel.styles.css?inline';
 import './ilw-accordion.css';
 
 class Accordion extends LitElement {
@@ -14,7 +14,7 @@ class Accordion extends LitElement {
     }
 
     static get styles() {
-        return styles;
+        return unsafeCSS(styles);
     }
 
     constructor() {
@@ -72,7 +72,7 @@ class AccordionPanel extends LitElement {
     }
 
     static get styles() {
-        return stylesPanel;
+        return unsafeCSS(stylesPanel);
     }
 
     constructor() {
