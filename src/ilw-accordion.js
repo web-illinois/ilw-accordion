@@ -1,4 +1,4 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, html, unsafeCSS, nothing } from "lit";
 import styles from "./ilw-accordion.styles.css?inline";
 import stylesPanel from "./ilw-accordion-panel.styles.css?inline";
 import "./ilw-accordion.css";
@@ -119,6 +119,12 @@ class AccordionPanel extends LitElement {
         this.shadowRoot.querySelector("#header-parent").classList.remove("focus");
     }
 
+    // Triggered when browser search match opens an accordion, we want to make sure the state
+    // is updated accordingly.
+    beforeMatch(e) {
+        this.dispatchEvent(new CustomEvent("expand", { bubbles: true, composed: true }));
+    }
+
     handleWindowKeypress(evt) {
         if (evt.target == this && (evt.code == "Space" || evt.code == "Enter")) {
             this.triggerToggle();
@@ -141,6 +147,7 @@ class AccordionPanel extends LitElement {
     render() {
         const ariaExpanded = this.open ? "true" : "false";
         const classInfo = this.open ? "expanded" : "";
+        const hidden = this.open ? nothing : "until-found";
         return html` <div id="section" class="${classInfo}">
             <div
                 id="header-parent"
@@ -162,7 +169,13 @@ class AccordionPanel extends LitElement {
                     ></button>
                 </div>
             </div>
-            <div role="region" aria-labelledby="header-text" id="panel">
+            <div
+                role="region"
+                aria-labelledby="header-text"
+                id="panel"
+                hidden=${hidden}
+                @beforematch=${this.beforeMatch}
+            >
                 <slot></slot>
             </div>
         </div>`;

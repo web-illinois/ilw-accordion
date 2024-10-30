@@ -41,11 +41,6 @@
 
 #panel {
     padding: var(--ilw-accordion-panel--padding);
-    display: none;
-}
-
-.expanded #panel {
-    display: block;
 }
 
 #icon {
