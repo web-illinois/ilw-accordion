@@ -1,14 +1,14 @@
 #section {
-    margin-bottom: 20px;
+    margin: var(--ilw-accordion-panel--section-margin);
 }
 
 #section.expanded {
-    margin-bottom: 10px;
+    margin: var(--ilw-accordion-panel--expanded--section-margin);
 }
 
 #header-parent {
     color: var(--ilw-accordion-panel--color);
-    padding: 30px 24px;
+    padding: var(--ilw-accordion-panel--header-padding);
     background: var(--ilw-accordion-panel--background);
     border-left: var(--ilw-accordion-panel--border-left);
 }
@@ -39,7 +39,7 @@
     overflow: hidden;
 }
 
-#panel {
+.expanded #panel {
     padding: var(--ilw-accordion-panel--padding);
 }
 
