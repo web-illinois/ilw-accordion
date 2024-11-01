@@ -68,7 +68,7 @@ class Accordion extends LitElement {
 class AccordionPanel extends LitElement {
     static get properties() {
         return {
-            open: { type: Boolean, attribute: true },
+            open: { type: Boolean, attribute: true, reflect: true },
         };
     }
 
@@ -79,20 +79,6 @@ class AccordionPanel extends LitElement {
     constructor() {
         super();
         this.open = false;
-        this.handleHeaderClick = this.handleHeaderClick.bind(this);
-        this.handleWindowKeypress = this.handleWindowKeypress.bind(this);
-        this.setFocus = this.setFocus.bind(this);
-        this.leaveFocus = this.leaveFocus.bind(this);
-    }
-
-    connectedCallback() {
-        super.connectedCallback();
-        window.addEventListener("keydown", this.handleWindowKeypress);
-    }
-
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        window.removeEventListener("keydown", this.handleWindowKeypress);
     }
 
     triggerToggle() {
@@ -101,34 +87,13 @@ class AccordionPanel extends LitElement {
 
     handleHeaderClick(evt) {
         this.triggerToggle();
-    }
-
-    setHighlight(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.add("highlight");
-    }
-
-    leaveHighlight(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.remove("highlight");
-    }
-
-    setFocus(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.add("focus");
-    }
-
-    leaveFocus(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.remove("focus");
+        evt.stopPropagation();
     }
 
     // Triggered when browser search match opens an accordion, we want to make sure the state
     // is updated accordingly.
     beforeMatch(e) {
         this.dispatchEvent(new CustomEvent("expand", { bubbles: true, composed: true }));
-    }
-
-    handleWindowKeypress(evt) {
-        if (evt.target == this && (evt.code == "Space" || evt.code == "Enter")) {
-            this.triggerToggle();
-        }
     }
 
     collapse() {
@@ -152,8 +117,7 @@ class AccordionPanel extends LitElement {
             <div
                 id="header-parent"
                 @click="${this.handleHeaderClick}"
-                @mouseover="${this.setHighlight}"
-                @mouseout="${this.leaveHighlight}"
+                tabindex="-1"
             >
                 <div id="header-text-icon">
                     <span id="icon" aria-hidden="true"> ${this.renderChevron()} </span>
@@ -164,8 +128,6 @@ class AccordionPanel extends LitElement {
                         aria-labelledby="header-text"
                         aria-controls="panel"
                         @click="${this.handleHeaderClick}"
-                        @focus="${this.setFocus}"
-                        @blur="${this.leaveFocus}"
                     ></button>
                 </div>
             </div>
