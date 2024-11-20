@@ -24,6 +24,11 @@
     outline: var(--ilw-link--focus-outline);
 }
 
+#header-text {
+    /* Focus is handled by the surrounding parent */
+    outline: none;
+}
+
 #header-text-icon {
     display: flex;
     column-gap: 20px;

@@ -54,15 +54,13 @@ The `ilw-accordion-panel` component has the following attribute:
 
 ## Accessibility Notes and Use
 
-This mainly follows the WAI Accordion pattern, but instead of inserting a button inside the slot, we are using an invisible button to toggle the state of that panel. This button is placed between the header and the panel in the document flow and should act as a prompt to expand or collapse the panel. The button element contains an aria-controls attribute which references the panel content. It contains an aria-expanded attribute which will be either true or false depending on if the section is expanded or collapsed.
+This mainly follows the WAI Accordion pattern, but since the heading element is not provided by the component, we can't insert a button inside of it. Instead, the div wrapping the heading is given a button role and the appropriate event listeners. The div wrapper has the aria-controls and aria-expanded attributes.
 
-The appearance of a section's header changes when its adjacent toggle button receives focus. When the button loses focus, the header reverts to its default appearance.
-
-The toggle button uses the content of the adjacent header as its label, by means of an aria-labelledby attribute which references the header content.
+The appearance of a section's header changes when the nested button role element receives focus. When the button loses focus, the header reverts to its default appearance.
 
 The summary slot should contain a heading, and the heading should not be duplicated in the accordion panel body. The headings should be the same across the entire accordion (for example, do not mix `h2` and `h3` inside the same accordion). 
 
-A "nice-to-have" is to label the `ilw-accordion` component with a header using the `aria-labelledby` attribute. 
+A "nice-to-have" is to label the `ilw-accordion` component with a header using the `aria-labelledby` attribute.
 
 ## External References
 
@@ -70,3 +68,4 @@ A "nice-to-have" is to label the `ilw-accordion` component with a header using t
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details 
 * https://daverupert.com/2019/12/why-details-is-not-an-accordion/ 
 * https://www.nngroup.com/articles/accordions-on-desktop/
+* https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/
