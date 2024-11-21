@@ -6,7 +6,7 @@
     "element-name": "ilw-accordion",
     "description": "This is an accordion where you have headers and each header can be opened to display more information. ",
     "builder-version": "1.0",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "date": "10/22/2024",
     "css": "https://cdn.toolkit.illinois.edu/ilw-accordion/1.0.0/ilw-accordion.css",
     "js": "https://cdn.toolkit.illinois.edu/ilw-accordion/1.0.0/ilw-accordion.js",
