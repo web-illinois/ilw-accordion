@@ -9,6 +9,10 @@
     --ilw-accordion-panel--margin: 0;
     --ilw-accordion-panel--padding: 5px 10px 20px 65px;
     --ilw-accordion-panel--border-left: 6px solid var(--il-blue);
+
+    --ilw-accordion-panel--section-margin: 0 0 20px 0;
+    --ilw-accordion-panel--expanded--section-margin: 0 0 10px 0;
+    --ilw-accordion-panel--header-padding: 30px 24px;
 }
 
 ilw-accordion {

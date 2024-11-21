@@ -1,7 +1,9 @@
-import { LitElement, html, unsafeCSS, nothing } from "lit";
+import {LitElement, html, unsafeCSS, nothing, svg} from "lit";
+import {unsafeSVG} from 'lit/directives/unsafe-svg.js';
 import styles from "./ilw-accordion.styles.css?inline";
 import stylesPanel from "./ilw-accordion-panel.styles.css?inline";
 import "./ilw-accordion.css";
+import chevron from "./chevron.svg?raw";
 
 class Accordion extends LitElement {
     static get properties() {
@@ -68,7 +70,7 @@ class Accordion extends LitElement {
 class AccordionPanel extends LitElement {
     static get properties() {
         return {
-            open: { type: Boolean, attribute: true },
+            open: { type: Boolean, attribute: true, reflect: true },
         };
     }
 
@@ -79,20 +81,6 @@ class AccordionPanel extends LitElement {
     constructor() {
         super();
         this.open = false;
-        this.handleHeaderClick = this.handleHeaderClick.bind(this);
-        this.handleWindowKeypress = this.handleWindowKeypress.bind(this);
-        this.setFocus = this.setFocus.bind(this);
-        this.leaveFocus = this.leaveFocus.bind(this);
-    }
-
-    connectedCallback() {
-        super.connectedCallback();
-        window.addEventListener("keydown", this.handleWindowKeypress);
-    }
-
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        window.removeEventListener("keydown", this.handleWindowKeypress);
     }
 
     triggerToggle() {
@@ -101,34 +89,21 @@ class AccordionPanel extends LitElement {
 
     handleHeaderClick(evt) {
         this.triggerToggle();
+        evt.stopPropagation();
     }
 
-    setHighlight(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.add("highlight");
-    }
-
-    leaveHighlight(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.remove("highlight");
-    }
-
-    setFocus(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.add("focus");
-    }
-
-    leaveFocus(e) {
-        this.shadowRoot.querySelector("#header-parent").classList.remove("focus");
+    handleHeaderKey(evt) {
+        // role=button doesn't automatically make it work with keyboards, so we need to listen to these
+        if (evt.key === " " || evt.key === "Enter" || evt.key === "Spacebar") {
+            evt.preventDefault();
+            this.triggerToggle();
+        }
     }
 
     // Triggered when browser search match opens an accordion, we want to make sure the state
     // is updated accordingly.
     beforeMatch(e) {
         this.dispatchEvent(new CustomEvent("expand", { bubbles: true, composed: true }));
-    }
-
-    handleWindowKeypress(evt) {
-        if (evt.target == this && (evt.code == "Space" || evt.code == "Enter")) {
-            this.triggerToggle();
-        }
     }
 
     collapse() {
@@ -139,11 +114,6 @@ class AccordionPanel extends LitElement {
         this.open = true;
     }
 
-    renderChevron() {
-        // prettier-ignore
-        return html`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='currentColor' stroke='currentColor' ><path d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z'/></svg>`;
-    }
-
     render() {
         const ariaExpanded = this.open ? "true" : "false";
         const classInfo = this.open ? "expanded" : "";
@@ -152,21 +122,15 @@ class AccordionPanel extends LitElement {
             <div
                 id="header-parent"
                 @click="${this.handleHeaderClick}"
-                @mouseover="${this.setHighlight}"
-                @mouseout="${this.leaveHighlight}"
+                @keydown=${this.handleHeaderKey}
+                role="button" 
+                tabindex="0" 
+                aria-expanded="${ariaExpanded}"
+                aria-controls="panel"
             >
                 <div id="header-text-icon">
-                    <span id="icon" aria-hidden="true"> ${this.renderChevron()} </span>
+                    <span id="icon" aria-hidden="true"> ${unsafeSVG(chevron)} </span>
                     <div id="header-text"><slot name="summary"></slot></div>
-                    <button
-                        id="header"
-                        aria-expanded="${ariaExpanded}"
-                        aria-labelledby="header-text"
-                        aria-controls="panel"
-                        @click="${this.handleHeaderClick}"
-                        @focus="${this.setFocus}"
-                        @blur="${this.leaveFocus}"
-                    ></button>
                 </div>
             </div>
             <div
