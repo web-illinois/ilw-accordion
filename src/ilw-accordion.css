@@ -20,6 +20,11 @@ ilw-accordion {
     font-size: 1.125rem;
 }
 
+ilw-accordion h2, ilw-accordion h3, ilw-accordion h4, ilw-accordion h5 {
+    font: normal 700 2.1875rem/2.6875rem var(--il-font-sans);
+    padding-top: 15px;
+}
+
 ilw-accordion *[slot="summary"] {
     font: 600 1.375rem/1.875rem var(--il-font-sans);
 }
@@ -27,4 +32,3 @@ ilw-accordion *[slot="summary"] {
 ilw-accordion *[slot="summary"], ilw-accordion *[slot="summary"] a, ilw-accordion *[slot="summary"] strong, ilw-accordion *[slot="summary"] em {
     color: unset;
 }
-

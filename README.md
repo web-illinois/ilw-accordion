@@ -12,12 +12,13 @@ Do not use this control when a user is going to read the entire page or you need
 
 This should not be used to replace the HTML `details` / `summary` elements. The accordion is for structured information with headers, while the details / summary elements is for information that does not contain header information. Instead, the accordion uses [`hidden="until-found"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden#the_hidden_until_found_state). That makes it possible to search for text on the page even when the content is collapsed, and the browser opens the accordion to show matches.
 
-There are two components bundled in this, the `ilw-accordion` and `ilw-accordion-panel`. The `ilw-accordion` should only contain one or more `ilw-accordion-panel` elements. The `ilw-accordion-panel` may contain headings, text, images, lists, links, and other rich-text information. 
+There are two components bundled in this, the `ilw-accordion` and `ilw-accordion-panel`. The `ilw-accordion` should only contain one or more `ilw-accordion-panel` elements, and header information that would split the header into sections. The `ilw-accordion-panel` may contain headings, text, images, lists, links, and other rich-text information. 
 
 The `ilw-accordion` component has the following attributes:
 * `theme`: the theme/background of the line to the left of the accordion. Options are `blue`, `orange`, `arches`, `industrial`
 * `width`: whether or not this is contained in the parent (default), if it will expand to full width (`full`), or if just the background will expand and the text will be in a narrow window (`auto`), or if it will size itself (`page`). If `auto` is used, the left border will not be used.
 * `limit`: a boolean attribute that determines if other panels close when a panel is opened. Use this if the user will not be comparing information in different panels. 
+* `buttons`: a boolean attribute that determines if there is an "expand all" / "collapse all" button at the top of the accordion. 
 
 The `ilw-accordion-panel` component has the following slots:
 * `summary`: the HTML that is in the summary section and is always displayed. 
@@ -52,6 +53,48 @@ The `ilw-accordion-panel` component has the following attribute:
 </ilw-accordion>
 ```
 
+```html
+<ilw-accordion>
+  <h2>Academic Departments</h2>
+  <ilw-accordion-panel>
+    <h3 slot="summary">Curriculum &amp; Instruction</h3>
+    <p>Directory information</p>
+  </ilw-accordion-panel>
+  <ilw-accordion-panel>
+    <h3 slot="summary">Education Policy, Organization, & Leadership</h3>
+    <p>Directory information</p>
+  </ilw-accordion-panel>
+  <ilw-accordion-panel>
+    <h3 slot="summary">Educational Psychology</h3>
+    <p>Directory information</p>
+  </ilw-accordion-panel>
+  <ilw-accordion-panel>
+    <h3 slot="summary">Special Education</h3>
+    <p>Directory information</p>
+  </ilw-accordion-panel>
+  <h2>Research Centers & Outreach Units</h2>
+  <ilw-accordion-panel>
+    <h3 slot="summary">Bureau of Educational Research</h3>
+    <p>Directory information</p>
+  </ilw-accordion-panel>
+  <ilw-accordion-panel>
+    <h3 slot="summary">Center for Education in Small Urban Communities</h3>
+    <p>Directory information</p>
+  </ilw-accordion-panel>
+</ilw-accordion>
+```
+
+
+### JavaScript 
+
+The accordion has two methods that can be used to expand or collapse all panels inside it. 
+
+Example of use:
+
+`document.querySelector('ilw-accordion').expandAll()`
+
+`document.querySelector('ilw-accordion').collapseAll()`
+
 ## Accessibility Notes and Use
 
 This mainly follows the WAI Accordion pattern, but since the heading element is not provided by the component, we can't insert a button inside of it. Instead, the div wrapping the heading is given a button role and the appropriate event listeners. The div wrapper has the aria-controls and aria-expanded attributes.
@@ -59,6 +102,8 @@ This mainly follows the WAI Accordion pattern, but since the heading element is 
 The appearance of a section's header changes when the nested button role element receives focus. When the button loses focus, the header reverts to its default appearance.
 
 The summary slot should contain a heading, and the heading should not be duplicated in the accordion panel body. The headings should be the same across the entire accordion (for example, do not mix `h2` and `h3` inside the same accordion). 
+
+If you do have headers in the accordion, make sure they follow the same semantic pattern (so you can do `h2` as a header inside the accordion, and then `h3` in the summary of each accordion panel).
 
 A "nice-to-have" is to label the `ilw-accordion` component with a header using the `aria-labelledby` attribute.
 
