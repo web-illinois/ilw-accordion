@@ -13,6 +13,14 @@
     --ilw-accordion-panel--section-margin: 0 0 20px 0;
     --ilw-accordion-panel--expanded--section-margin: 0 0 10px 0;
     --ilw-accordion-panel--header-padding: 30px 24px;
+
+    --ilw-accordion--button-background-color: white;
+    --ilw-accordion--button-border-color: var(--il-blue);
+    --ilw-accordion--button-foreground-color: var(--il-blue);
+    --ilw-accordion--button-active-background-color: var(--il-blue);
+    --ilw-accordion--button-active-border-color: var(--il-blue);
+    --ilw-accordion--button-active-color: white;
+    --ilw-accordion--button-active-border-color: var(--il-blue);
 }
 
 ilw-accordion {

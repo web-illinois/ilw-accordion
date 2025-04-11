@@ -75,9 +75,9 @@ class Accordion extends LitElement {
     render() {
         return html`
             <div class="${this.width} ${this.theme}">
-                <ul class="ilw-buttons" ?hidden="${!this.buttons}">
-                    <li><button class="ilw-button" @click="${this.expandAll}">Expand All</button></li>
-                    <li><button class="ilw-button" @click="${this.collapseAll}">Collapse All</button></li>
+                <ul class="buttons" ?hidden="${!this.buttons}">
+                    <li><button @click="${this.expandAll}">Expand All</button></li>
+                    <li><button @click="${this.collapseAll}">Collapse All</button></li>
                 </ul>
                 <slot></slot>
             </div>
