@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Component</title>
+    <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
+    <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/3.0.0-alpha/ilw-global.css">
+    <script type="module" src="/src/ilw-accordion.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+          const params = new URLSearchParams(window.location.search);
+          document.querySelectorAll("ilw-accordion").forEach(component => {
+            if (params.has('theme')) {
+              component.setAttribute('theme', params.get('theme'));
+            }
+            if (params.has('width')) {
+              component.setAttribute('width', params.get('width'));
+            }
+            if (params.has('limit')) {
+              component.setAttribute('limit', params.get('limit'));
+            }
+            if (params.has('buttons')) {
+              component.setAttribute('buttons', params.get('buttons'));
+            }
+          });
+        });
+    </script>
+    
+<body style="margin: 0; padding: 0;">
+    <div style="margin: 0 auto; max-width: 1200px;">
+    <h1 id="accordion-header">Directory</h1>
+    <ilw-accordion aria-labelledby="accordion-header">
+      <h2>Academic Departments</h2>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Curriculum &amp; Instruction</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Education Policy, Organization, & Leadership</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Educational Psychology</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Special Education</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <h2>Research Centers & Outreach Units</h2>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Bureau of Educational Research</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Center for Education in Small Urban Communities</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Council on Teacher Education</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office for Mathematics, Science, & Technology Education</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of Community College Research and Leadership</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of School and Community Experiences</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <h2>Administration</h2>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of the Dean</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Facilities</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Finance</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Human Resources</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">IT Partners at Education</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Marketing and Communications</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of Advancement</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of Graduate Programs</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of International Programs</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of Online Programs</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+      <ilw-accordion-panel>
+        <h3 slot="summary">Office of Undergraduate Programs</h3>
+        <p>Directory information</p>
+      </ilw-accordion-panel>
+    </ilw-accordion>
+</div>
+</body>
+
+</html>

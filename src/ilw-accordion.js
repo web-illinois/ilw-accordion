@@ -11,6 +11,7 @@ class Accordion extends LitElement {
             theme: { type: String, attribute: true },
             width: { type: String, attribute: true },
             limit: { type: Boolean, attribute: true },
+            buttons: { type: Boolean, attribute: true }
         };
     }
 
@@ -23,6 +24,7 @@ class Accordion extends LitElement {
         this.theme = "";
         this.width = "";
         this.limit = false;
+        this.buttons = false;
         this.addEventListener("collapse", (e) => this.collapsePanel(e.target));
         this.addEventListener("expand", (e) => this.expandPanelListener(e.target));
     }
@@ -58,9 +60,25 @@ class Accordion extends LitElement {
         return this.querySelectorAll("ilw-accordion-panel[open]");
     }
 
+    expandAll() {
+        this.getPanels().forEach((panel) => {
+            this.expandPanel(panel);
+        });
+    }
+
+    collapseAll() {
+        this.getPanels().forEach((panel) => {
+            this.collapsePanel(panel);
+        });
+    }
+
     render() {
         return html`
             <div class="${this.width} ${this.theme}">
+                <ul class="buttons" ?hidden="${!this.buttons}">
+                    <li><button @click="${this.expandAll}">Expand All</button></li>
+                    <li><button @click="${this.collapseAll}">Collapse All</button></li>
+                </ul>
                 <slot></slot>
             </div>
         `;
