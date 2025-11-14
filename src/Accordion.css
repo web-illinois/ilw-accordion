@@ -1,31 +1,39 @@
 :root {
     --ilw-accordion--margin: 0 var(--ilw-margin--side, max(1.875rem, calc(50cqw - 37.5rem))) 0;
-    --ilw-accordion-panel--color: var(--il-blue);
-    --ilw-accordion-panel--background: var(--il-storm-lighter-4);
-    --ilw-accordion-panel--hover-color: var(--il-blue);
-    --ilw-accordion-panel--hover-background: var(--il-storm-lighter-3);
+    --ilw-accordion--accent: var(--il-blue);
+
     --ilw-accordion-panel--image-transform: rotate(270deg);
     --ilw-accordion-panel--image-transform-expand: rotate(0);
     --ilw-accordion-panel--margin: 0;
     --ilw-accordion-panel--padding: 5px 10px 20px 65px;
-    --ilw-accordion-panel--border-left: 6px solid var(--il-blue);
-
     --ilw-accordion-panel--section-margin: 0 0 20px 0;
     --ilw-accordion-panel--expanded--section-margin: 0 0 10px 0;
     --ilw-accordion-panel--header-padding: 30px 24px;
-
-    --ilw-accordion--button-background-color: white;
-    --ilw-accordion--button-border-color: var(--il-blue);
-    --ilw-accordion--button-foreground-color: var(--il-blue);
-    --ilw-accordion--button-active-background-color: var(--il-blue);
-    --ilw-accordion--button-active-border-color: var(--il-blue);
-    --ilw-accordion--button-active-color: white;
-    --ilw-accordion--button-active-border-color: var(--il-blue);
 }
 
 ilw-accordion {
     font-family: var(--il-font-sans);
     font-size: 1.125rem;
+}
+
+ilw-accordion[accent="arches"] {
+    --ilw-accordion--accent: var(--il-arches);
+}
+
+ilw-accordion[accent="industrial"] {
+    --ilw-accordion--accent: var(--il-industrial);
+}
+
+ilw-accordion[accent="altgeld"] {
+    --ilw-accordion--accent: var(--il-altgeld);
+}
+
+ilw-accordion[accent="orange"] {
+    --ilw-accordion--accent: var(--il-orange);
+}
+
+ilw-accordion[accent="gray"] {
+    --ilw-accordion--accent: var(--il-storm-95);
 }
 
 ilw-accordion *[slot="summary"] {

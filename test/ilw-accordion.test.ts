@@ -1,26 +1,9 @@
-<!doctype html>
-<html lang="en">
+import { expect, test } from "vitest";
+import { render } from "vitest-browser-lit";
+import { html } from "lit";
+import "../src/ilw-accordion";
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accordion Component</title>
-    <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
-    <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/latest/ilw-global.css">
-    <script type="module" src="/src/ilw-accordion.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-          const params = new URLSearchParams(window.location.search);
-          document.querySelectorAll("ilw-accordion").forEach(component => {
-            params.forEach((value, key) => {
-                component.setAttribute(key, value);
-            });
-          });
-        });
-    </script>
-    
-<body style="margin: 0; padding: 0;">
-    <div style="margin: 0 auto; max-width: 1200px;">
+const content = html`
     <h1 id="accordion-header">Enrollment FAQ</h1>
     <ilw-accordion aria-labelledby="accordion-header">
       <ilw-accordion-panel>
@@ -43,7 +26,10 @@
         <p>Application deadlines vary by program, so check the specific dates on the university’s website.</p>
       </ilw-accordion-panel>
     </ilw-accordion>
-</div>
-</body>
+`;
 
-</html>
+test("renders slotted content", async () => {
+    const screen = render(content);
+    const element = screen.getByText("What are the admission requirements for enrolling in a degree program?");
+    await expect.element(element).toBeInTheDocument();
+});
