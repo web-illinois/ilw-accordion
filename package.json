@@ -4,7 +4,7 @@
     "repository": "github:web-illinois/ilw-accordion",
     "private": false,
     "license": "MIT",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "type": "module",
     "files": [
         "src/**",
@@ -17,7 +17,7 @@
             "require": "./src/ilw-accordion.cjs",
             "default": "./src/ilw-accordion.js"
         },
-        "./ilw-filter.css": {
+        "./ilw-accordion.css": {
             "import": "./dist/ilw-accordion.css"
         }
     },
