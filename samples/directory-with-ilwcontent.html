@@ -6,7 +6,9 @@
     <title>Accordion Component</title>
     <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
     <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/latest/ilw-global.css">
+    <script type="module" src="https://dev.toolkit.illinois.edu/ilw-content/latest/ilw-content.js"></script>
     <script type="module" src="/src/ilw-accordion.js"></script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
@@ -22,9 +24,10 @@
     <div style="margin: 0 auto; max-width: 1200px;">
     <h1 id="accordion-header">Directory</h1>
     <ilw-accordion aria-labelledby="accordion-header">
-      <h2>Academic Departments</h2>
+      <ilw-content></ilw-content><h2>Academic Departments</h2></ilw-content>
       <ilw-accordion-panel>
         <h3 slot="summary">Curriculum &amp; Instruction</h3>
+        <ilw-content><p class="ilw-directory-office-description">The Department of Curriculum &amp; Instruction cultivates outstanding educators interested in pursuing research, improving their teaching and enhancing their career. C&amp;I prepares its undergraduate and graduate students to take on the challenges of today's and tomorrow's students.</p><p class="ilw-directory-office-title">Curriculum &amp; Instruction</p><p><a href="https://map.illinois.edu/view?ACTION=MAP&amp;buildingId=0160">306 Education Building </a></p><p>1310 S. Sixth St.</p><p><a href="mailto:gradservices@education.illinois.edu">gradservices@education.illinois.edu</a> </p><p> <a href="tel:217-244-8286">217-244-8286</a></p></ilw-content>
         <p>Directory information</p>
       </ilw-accordion-panel>
       <ilw-accordion-panel>

@@ -7,21 +7,20 @@
 }
 
 #header-parent {
-    color: var(--ilw-accordion-panel--color);
+    color: var(--ilw-color--gray--text);
     padding: var(--ilw-accordion-panel--header-padding);
-    background: var(--ilw-accordion-panel--background);
-    border-left: var(--ilw-accordion-panel--border-left);
+    background: var(--ilw-color--gray--background);
+    border-left: 6px solid var(--ilw-accordion--accent);
 }
 
 #header-parent:hover {
-    color: var(--ilw-accordion-panel--hover-color);
-    background: var(--ilw-accordion-panel--hover-background);
+    background: var(--ilw-color--gray--border-light);
 }
 
 #header-parent:focus-within {
-    background-color: var(--ilw-link--focus-background-color);
-    color: var(--ilw-link--focus-color);
-    outline: var(--ilw-link--focus-outline);
+    background-color: var(--ilw-color--focus--background);
+    color: var(--ilw-color--focus--text);
+    outline: var(--ilw-color--focus--outline);
 }
 
 #header-text {

@@ -1,0 +1,124 @@
+{
+    "title": "Accordion",
+    "tag": "ilw-accordion",
+    "github": "https://github.com/web-illinois/ilw-accordion/",
+    "type": "web component",
+    "element-name": "ilw-accordion",
+    "description": "This is an accordion where you have headers and each header can be opened to display more information. ",
+    "builder-version": "1.2",
+    "version": "1.2.1",
+    "date": "11/14/2025",
+    "css": "https://cdn.toolkit.illinois.edu/ilw-accordion/1.2/ilw-accordion.css",
+    "js": "https://cdn.toolkit.illinois.edu/ilw-accordion/1.2/ilw-accordion.js",
+    "production": true,
+    "notes": "",
+    "parent-style": "margin: 0 auto; max-width: 1200px;",
+    "samples": [
+        {
+            "name": "default",
+            "description": "Default information",
+            "text": "<ilw-accordion-panel><h3 slot=\"summary\">What are the admission requirements for enrolling in a degree program?</h3><p>To enroll in a degree program, you typically need to meet certain admission requirements, which may include:</p><ul><li>A high school diploma or equivalent (e.g., GED)</li><li>Satisfactory SAT, ACT, or other standardized test scores (if required)<li>Completion of prerequisite courses, particularly for specialized programs (e.g., math and science courses for engineering)<li>Letters of recommendation, a personal statement, or an admissions essay<li>A minimum GPA requirement, which varies by program and institution</ul></ilw-accordion-panel><ilw-accordion-panel><h3 slot=\"summary\">How do I submit my application?</h3><p>Applications are usually submitted online through the university's admissions portal.</p></ilw-accordion-panel><ilw-accordion-panel><h3 slot=\"summary\">When is the application deadline?</h3><p>Application deadlines vary by program, so check the specific dates on the university’s website.</p></ilw-accordion-panel>"
+        },
+        {
+            "name": "firstopened",
+            "description": "Accordion with First Panel Open",
+            "text": "<ilw-accordion-panel open=\"true\"><h3 slot=\"summary\">What are the admission requirements for enrolling in a degree program?</h3><p>To enroll in a degree program, you typically need to meet certain admission requirements, which may include:</p><ul><li>A high school diploma or equivalent (e.g., GED)</li><li>Satisfactory SAT, ACT, or other standardized test scores (if required)<li>Completion of prerequisite courses, particularly for specialized programs (e.g., math and science courses for engineering)<li>Letters of recommendation, a personal statement, or an admissions essay<li>A minimum GPA requirement, which varies by program and institution</ul></ilw-accordion-panel><ilw-accordion-panel><h3 slot=\"summary\">How do I submit my application?</h3><p>Applications are usually submitted online through the university's admissions portal.</p></ilw-accordion-panel><ilw-accordion-panel><h3 slot=\"summary\">When is the application deadline?</h3><p>Application deadlines vary by program, so check the specific dates on the university’s website.</p></ilw-accordion-panel>"
+        }
+    ],
+    "attributes-fixed": [],
+    "attributes-text": [],
+    "attributes": [
+        {
+            "name": "accent",
+            "description": "Color accent used, defaults to blue",
+            "depreciated": false,
+            "values": [
+                "",
+                "blue",
+                "orange",
+                "industrial",
+                "arches",
+                "altgeld",
+                "gray"
+            ]
+        },
+        {
+            "name": "width",
+            "description": "Width of the accordion (should it use the containing controller or break to full width)",
+            "depreciated": false,
+            "values": [
+                "",
+                "full",
+                "auto",
+                "page"
+            ]
+        },
+        {
+            "name": "limit",
+            "description": "Whether or not it limits the number of open items to a single item",
+            "depreciated": false,
+            "values": [
+                "",
+                "true"
+            ]
+        },
+        {
+            "name": "buttons",
+            "description": "Whether or not it displays buttons for expand and collapse all",
+            "depreciated": false,
+            "values": [
+                "",
+                "true"
+            ]
+        }
+    ],
+    "classes-fixed": [],
+    "classes": [],
+    "css-variables": [
+        {
+            "name": "--ilw-accordion--margin",
+            "depreciated": false,
+            "description": "Margin of the main accordion"
+        },
+        {
+            "name": "--ilw-accordion--accent",
+            "depreciated": false,
+            "description": "Accent color of the main accordion"
+        },
+        {
+            "name": "--ilw-accordion-panel--image-transform",
+            "depreciated": false,
+            "description": "Transform of the chevron when not expanded"
+        },
+        {
+            "name": "--ilw-accordion-panel--image-transform-expand",
+            "depreciated": false,
+            "description": "Transform of the chevron when expanded"
+        },
+        {
+            "name": "--ilw-accordion-panel--margin",
+            "depreciated": false,
+            "description": "Margin of the panel"
+        },
+        {
+            "name": "--ilw-accordion-panel--padding",
+            "depreciated": false,
+            "description": "Padding of the panel content (the information below the header)"
+        },
+        {
+            "name": "--ilw-accordion-panel--header-padding",
+            "depreciated": false,
+            "description": "Padding of the header panel (the header section)"
+        },
+        {
+            "name": "--ilw-accordion-panel--section-margin",
+            "depreciated": false,
+            "description": "Margin of the entire section (including the header)"
+        },
+        {
+            "name": "--ilw-accordion-panel--expanded--section-margin",
+            "depreciated": false,
+            "description": "Margin of the entire section (including the header) when expanded"
+        }
+    ]
+}
