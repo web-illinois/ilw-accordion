@@ -4,7 +4,7 @@
     "repository": "github:web-illinois/ilw-accordion",
     "private": false,
     "license": "MIT",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "module",
     "files": [
         "src/**",
@@ -13,9 +13,9 @@
     ],
     "exports": {
         ".": {
-            "import": "./src/ilw-accordion.js",
-            "require": "./src/ilw-accordion.cjs",
-            "default": "./src/ilw-accordion.js"
+            "import": "./dist/ilw-accordion.js",
+            "require": "./dist/ilw-accordion.cjs",
+            "default": "./dist/ilw-accordion.js"
         },
         "./ilw-accordion.css": {
             "import": "./dist/ilw-accordion.css"
