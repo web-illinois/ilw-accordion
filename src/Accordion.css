@@ -2,6 +2,7 @@
     --ilw-accordion--margin: 0 var(--ilw-margin--side, max(1.875rem, calc(50cqw - 37.5rem))) 0;
     --ilw-accordion--accent: var(--il-blue);
 
+    --ilw-accordion-panel--image-size: 20px;
     --ilw-accordion-panel--image-transform: rotate(270deg);
     --ilw-accordion-panel--image-transform-expand: rotate(0);
     --ilw-accordion-panel--margin: 0;
@@ -9,11 +10,49 @@
     --ilw-accordion-panel--section-margin: 0 0 20px 0;
     --ilw-accordion-panel--expanded--section-margin: 0 0 10px 0;
     --ilw-accordion-panel--header-padding: 30px 24px;
+    --ilw-accordion-panel--background: var(--ilw-color--gray--background);
+    --ilw-accordion-panel--background-hover: var(--ilw-color--gray--border-light);
+    --ilw-accordion-panel--border-left: 6px solid var(--ilw-accordion--accent);
+    --ilw-accordion-panel--summary-font: 600 1.375rem / 1.875rem var(--il-font-sans);
 }
 
 ilw-accordion {
     font-family: var(--il-font-sans);
     font-size: 1.125rem;
+    display: block;
+}
+
+ilw-accordion ilw-accordion-panel {
+    display: block;
+}
+
+ilw-accordion[compact] ilw-accordion-panel {
+    border-top: thin solid var(--il-storm-80);
+}
+
+ilw-accordion[compact] ilw-accordion-panel {
+    border-bottom: none;
+}
+
+ilw-accordion[compact] {
+    --ilw-accordion-panel--image-size: 15px;
+    --ilw-accordion-panel--header-padding: 10px 20px;
+    --ilw-accordion-panel--section-margin: 0px;
+    --ilw-accordion-panel--border-left: none;
+    --ilw-accordion-panel--background: white;
+    --ilw-accordion-panel--background-hover: var(--ilw-color--gray--background);
+    --ilw-accordion-panel--expanded--section-margin: 0;
+    --ilw-accordion-panel--padding: 0 10px 2px 55px;
+    --ilw-accordion-panel--summary-font: 600 1.125rem / 1.375rem var(--il-font-sans);
+    border-bottom: thin solid var(--il-storm-80);
+}
+
+ilw-accordion[compact], ilw-accordion[accent="white"] {
+    --ilw-accordion--accent: white;
+}
+
+ilw-accordion[accent="blue"] {
+    --ilw-accordion--accent: var(--il-blue);
 }
 
 ilw-accordion[accent="arches"] {
@@ -36,13 +75,22 @@ ilw-accordion[accent="gray"] {
     --ilw-accordion--accent: var(--il-storm-95);
 }
 
+ilw-accordion[accent="black"] {
+    --ilw-accordion--accent: var(--il-black);
+}
+
+
 ilw-accordion *[slot="summary"] {
-    font: 600 1.375rem/1.875rem var(--il-font-sans);
+    font: var(--ilw-accordion-panel--summary-font);
     padding: 0;
     margin: 0;
 }
 
 ilw-accordion *[slot="summary"], ilw-accordion *[slot="summary"] a, ilw-accordion *[slot="summary"] strong, ilw-accordion *[slot="summary"] em {
     color: unset;
+}
+
+ilw-accordion *[slot="summary"], ilw-accordion *[slot="summary"] a, ilw-accordion *[slot="summary"] strong, ilw-accordion *[slot="summary"] em {
+    color: var(--il-blue);
 }
 

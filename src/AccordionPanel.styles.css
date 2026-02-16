@@ -7,14 +7,15 @@
 }
 
 #header-parent {
+    cursor: pointer;
     color: var(--ilw-color--gray--text);
     padding: var(--ilw-accordion-panel--header-padding);
-    background: var(--ilw-color--gray--background);
-    border-left: 6px solid var(--ilw-accordion--accent);
+    background: var(--ilw-accordion-panel--background);
+    border-left: var(--ilw-accordion-panel--border-left);
 }
 
 #header-parent:hover {
-    background: var(--ilw-color--gray--border-light);
+    background: var(--ilw-accordion-panel--background-hover);
 }
 
 #header-parent:focus-within {
@@ -56,7 +57,7 @@
 }
 
 #icon svg {
-    width: 20px;
+    width: var(--ilw-accordion-panel--image-size);
 }
 
 .expanded #icon {

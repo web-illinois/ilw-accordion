@@ -15,6 +15,8 @@ export default class Accordion extends LitElement {
     limit: boolean = false;
     @property({type: Boolean}) 
     buttons: boolean = false;
+    @property({type: Boolean}) 
+    compact: boolean = false;
 
     static get styles() {
         return unsafeCSS(styles);
@@ -72,9 +74,13 @@ export default class Accordion extends LitElement {
         });
     }
 
+    getColorStyle() {
+        return this.accent + (this.compact ? '' :  ' thick');
+    }
+
     render() {
         return html`
-            <div class="${this.width} ${this.accent}">
+            <div class="${this.width} ${this.getColorStyle()}">
                 <ul class="buttons" ?hidden="${!this.buttons}">
                     <li><button @click="${this.expandAll}">Expand All</button></li>
                     <li><button @click="${this.collapseAll}">Collapse All</button></li>

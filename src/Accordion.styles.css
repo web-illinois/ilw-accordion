@@ -13,16 +13,8 @@
     width: 100vw;
 }
 
-.orange {
-    --ilw-accordion-panel--border-left: 6px solid var(--il-orange);
-}
-
-.arches {
-    --ilw-accordion-panel--border-left: 6px solid var(--il-arches);
-}
-
-.industrial {
-    --ilw-accordion-panel--border-left: 6px solid var(--il-industrial);
+.thick {
+    --ilw-accordion-panel--border-left: 6px solid var(--ilw-accordion--accent);
 }
 
 .auto {
