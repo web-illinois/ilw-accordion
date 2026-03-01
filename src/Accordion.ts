@@ -81,7 +81,7 @@ export default class Accordion extends LitElement {
     render() {
         return html`
             <div class="${this.width} ${this.getColorStyle()}">
-                <ul class="buttons" ?hidden="${!this.buttons}">
+                <ul class="buttons" ?compact="${this.compact}" ?hidden="${!this.buttons}">
                     <li><button @click="${this.expandAll}">Expand All</button></li>
                     <li><button @click="${this.collapseAll}">Collapse All</button></li>
                 </ul>

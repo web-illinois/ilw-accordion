@@ -33,6 +33,10 @@ ul.buttons {
     padding: 0;
 }
 
+ul.buttons[compact] {
+    justify-content: right;
+}
+
 ul.buttons[hidden] {
     display: none;
 }
@@ -76,4 +80,31 @@ ul.buttons li button:focus {
     border-color: var(--ilw-color--focus--text);
     color: var(--ilw-color--focus--text);
     outline: var(--ilw-color--focus--outline);
+}
+
+ul.buttons[compact] li button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: normal;
+  text-decoration: underline;
+  color: var(--ilw-color--link);
+}
+
+ul.buttons[compact] li button:hover {
+    background: white;
+    color: var(--ilw-color--link-hover);
+}
+
+ul.buttons[compact] li::after {
+  content: " | "; 
+  margin-left: 0.5rem; 
+}
+
+ul.buttons[compact] li:last-child::after {
+  content: none; 
 }
