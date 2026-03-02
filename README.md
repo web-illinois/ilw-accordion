@@ -15,10 +15,11 @@ This should not be used to replace the HTML `details` / `summary` elements. The 
 There are two components bundled in this, the `ilw-accordion` and `ilw-accordion-panel`. The `ilw-accordion` should only contain one or more `ilw-accordion-panel` elements, and header information that would split the header into sections. The `ilw-accordion-panel` may contain headings, text, images, lists, links, and other rich-text information. 
 
 The `ilw-accordion` component has the following attributes:
-* `theme`: the theme/background of the line to the left of the accordion. Options are `blue`, `orange`, `arches`, `industrial`
+* `accent`: the color of the line to the left of the accordion. Options are `blue`, `orange`, `arches`, `industrial`, `white`, `grey`, `black`
 * `width`: whether or not this is contained in the parent (default), if it will expand to full width (`full`), or if just the background will expand and the text will be in a narrow window (`auto`), or if it will size itself (`page`). If `auto` is used, the left border will not be used.
 * `limit`: a boolean attribute that determines if other panels close when a panel is opened. Use this if the user will not be comparing information in different panels. 
 * `buttons`: a boolean attribute that determines if there is an "expand all" / "collapse all" button at the top of the accordion. 
+* `compact`: a boolean attribute that determines if it displays in a compact view (which reduces the amount of space in the accordion). If the compact view is chosen, then the accent option is ignored.
 
 The `ilw-accordion-panel` component has the following slots:
 * `summary`: the HTML that is in the summary section and is always displayed. 
