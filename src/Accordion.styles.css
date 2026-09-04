@@ -92,12 +92,17 @@ ul.buttons[compact] li button {
   font-size: inherit;
   font-weight: normal;
   text-decoration: underline;
-  color: var(--ilw-color--link);
+  color: var(--ilw-color--text);
 }
 
 ul.buttons[compact] li button:hover {
     background: white;
     color: var(--ilw-color--link-hover);
+}
+
+ul.buttons[compact] li button:focus {
+    background: var(--ilw-color--focus--background);
+    color: var(--ilw-color--focus--text);
 }
 
 ul.buttons[compact] li::after {
