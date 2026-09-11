@@ -1,12 +1,31 @@
 {
-    "title": "Accordion",
-    "tag": "ilw-accordion",
-    "github": "https://github.com/web-illinois/ilw-accordion/",
-    "type": "web component",
-    "element-name": "ilw-accordion",
-    "description": "This is an accordion where you have headers and each header can be opened to display more information. ",
-    "purpose": "Reduce the need for scrolling with collapsible accordions.",
-    "toolkit-version": "1.3",
-    "production-version": "1.3",
-    "development-version": "latest"
+  "title": "Accordion",
+  "id": "ilw-accordion",
+  "type": "Web Component",
+  "repository-name": "ilw-accordion",
+  "description": "Organize long pages into expandable sections so visitors can reveal the information they need without excessive scrolling.",
+  "purpose": "Reduce the need for scrolling with collapsible accordions.",
+  "customtemplates": [],
+  "versions": [
+    {
+      "name": "1.0",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.1",
+      "notes": "",
+      "template": "1.1"
+    },
+    {
+      "name": "1.2",
+      "notes": "",
+      "template": "1.2"
+    },
+    {
+      "name": "1.3",
+      "notes": "",
+      "template": "1.3"
+    }
+  ]
 }
